@@ -1,0 +1,5 @@
+{"username":"folix","password":"ssssss"}
+{"username":"jeyfelix","password":"123."}
+{"username":"jeyfelix","password":"1234."}
+{"username":"brian","password":"123."}
+{"username":"felix","email":"jeyfolix23@gmail.com","password":"@123jey","staffNumber":"23","department":"ict"}
