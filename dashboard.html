@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commerce Dashboard</title>
+    <link rel="stylesheet" href="../styles/dashboard.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">IT</div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item">Main Menu</a>
+                <a href="#" class="nav-item">Settings</a>
+                <a href="#" class="nav-item">Projects</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="user-info">
+                <span>Kibabii Universy</span>
+                <div class="avatar">KIBU</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+    <!-- Dashboard -->
+    <div class="sidebar-section">
+        <div class="sidebar-item active">
+            <span class="sidebar-icon">📊</span>
+            Dashboard
+        </div>
+    </div>
+    
+    <!-- User Management -->
+    <div class="sidebar-section">
+        <div class="sidebar-title">User Management</div>
+        <div class="sidebar-item">View Users</div>
+        <div class="sidebar-item"> Add / Edit Users</div>
+        
+      <a href="add_user.html" class="sidebar-item">Delete Users</a>
+        <div class="sidebar-item">Account Verification</div>
+    </div>
+    
+    <!-- Ticket Management -->
+    <div class="sidebar-section">
+        <div class="sidebar-title">Ticket Management</div>
+        <div class="sidebar-item">All Tickets</div>
+        <div class="sidebar-item">Assign Tickets</div>
+        <div class="sidebar-item">Ticket Categories</div>
+        <div class="sidebar-item">Ticket Status</div>
+    </div>
+    
+    <!-- Reports & Analytics -->
+    <div class="sidebar-section">
+        <div class="sidebar-title">Reports & Analytics</div>
+        <div class="sidebar-item">Ticket Volume Reports</div>
+        <div class="sidebar-item">User Activity Logs</div>
+        <div class="sidebar-item">Department Load</div>
+        <div class="sidebar-item">Feedback & CSAT</div>
+    </div>
+    
+    <!-- System Settings -->
+    <div class="sidebar-section">
+        <div class="sidebar-title">System Settings</div>
+        <div class="sidebar-item">System Configuration</div>
+        <div class="sidebar-item">Backup & Restore</div>
+        <div class="sidebar-item">API & Integration Keys</div>
+        <div class="sidebar-item">Notification Settings</div>
+    </div>
+    
+    <!-- Security -->
+    <div class="sidebar-section">
+        <div class="sidebar-title">Security</div>
+        <div class="sidebar-item">Access Control / Roles</div>
+        <div class="sidebar-item">Login Logs</div>
+        <div class="sidebar-item">Audit Logs</div>
+        <div class="sidebar-item">2FA Settings</div>
+    </div>
+    
+    <!-- Network & Devices -->
+    <div class="sidebar-section">
+        <div class="sidebar-title">Network & Devices</div>
+        <div class="sidebar-item">Connected Devices</div>
+        <div class="sidebar-item">IP/Device Tracking</div>
+        <div class="sidebar-item">Software Inventory</div>
+    </div>
+    
+    <!-- Communication -->
+    <div class="sidebar-section">
+        <div class="sidebar-title">Communication</div>
+        <div class="sidebar-item">Announcements</div>
+        <div class="sidebar-item">In-App Messages</div>
+        <div class="sidebar-item">Email/SMS Broadcast</div>
+    </div>
+    
+    <!-- Profile -->
+    <div class="sidebar-section">
+        <div class="sidebar-title">Profile</div>
+        <div class="sidebar-item">My Profile</div>
+        <div class="sidebar-item">Change Password</div>
+        <div class="sidebar-item logout">Logout</div>
+    </div>
+</aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <div class="main-content">
+                <!-- Page Header -->
+                <div class="content-header">
+                    <h1 class="page-title">TICKET SYSTEM</h1>
+                    <div class="tabs">
+                        <div class="tab active">Variation 1</div>
+                        <div class="tab">Variation 2</div>
+                    </div>
+                </div>
+
+                <!-- Income Report -->
+                <div class="card">
+                    <div class="card-title">
+                        Income Report
+                        <button class="options-btn">Options ▼</button>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-bar">
+                            <div class="chart-label">Ticket Volume</div>
+                            <div class="chart-progress">
+                                <div class="chart-fill news" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="chart-bar">
+                            <div class="chart-label">User Active</div>
+                            <div class="chart-progress">
+                                <div class="chart-fill strong" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="chart-bar">
+                            <div class="chart-label">Department Load</div>
+                            <div class="chart-progress">
+                                <div class="chart-fill hit" style="width: 60%;"></div>
+                            </div>
+                        </div>
+                        <div class="chart-bar">
+                            <div class="chart-label">Feedback</div>
+                            <div class="chart-progress">
+                                <div class="chart-fill shoot" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="chart-bar">
+                            <div class="chart-label">Active ticket</div>
+                            <div class="chart-progress">
+                                <div class="chart-fill return" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+
+                <!-- Target Sales -->
+                <div class="card">
+                    <div class="card-title">Target Sales</div>
+                    <p style="color: #8b9dc3; margin-bottom: 20px;">Total performance for this month</p>
+                    <div class="sales-metrics">
+                        <div class="metric">
+                            <div class="metric-value">366</div>
+                            <div class="metric-label">Orders<br>Monthly Target</div>
+                        </div>
+                        <div class="metric income">
+                            <div class="metric-value">$2797</div>
+                            <div class="metric-label">Income<br>Monthly Target</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simple Table -->
+                <div class="card">
+                    <div class="card-title">
+                        Simple Table
+                        <div>
+                            <button class="options-btn" style="margin-right: 10px;">List View</button>
+                            <button class="options-btn">All Items</button>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Status</th>
+                                    <th>Name</th>
+                                    <th>Progress</th>
+                                    <th>Sales</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#343</td>
+                                    <td><span class="status-badge status-pending">Pending</span></td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-avatar"></div>
+                                            <div>
+                                                <div>John Doe</div>
+                                                <div style="font-size: 12px; color: #8b9dc3;">Web Developer</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 60%;"></div>
+                                        </div>
+                                    </td>
+                                    <td>📊</td>
+                                    <td>⋯</td>
+                                </tr>
+                                <tr>
+                                    <td>#347</td>
+                                    <td><span class="status-badge status-complete">Complete</span></td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-avatar"></div>
+                                            <div>
+                                                <div>Robert Tillman</div>
+                                                <div style="font-size: 12px; color: #8b9dc3;">Senior UI Lead Designer</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 100%;"></div>
+                                        </div>
+                                    </td>
+                                    <td>📊</td>
+                                    <td>⋯</td>
+                                </tr>
+                                <tr>
+                                    <td>#351</td>
+                                    <td><span class="status-badge status-progress">In Progress</span></td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-avatar"></div>
+                                            <div>
+                                                <div>Elliot Huber</div>
+                                                <div style="font-size: 12px; color: #8b9dc3;">Lorem Ipsum dolor Sit</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 40%;"></div>
+                                        </div>
+                                    </td>
+                                    <td>📊</td>
+                                    <td>⋯</td>
+                                </tr>
+                                <tr>
+                                    <td>#65</td>
+                                    <td><span class="status-badge status-progress">In Progress</span></td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-avatar"></div>
+                                            <div>
+                                                <div>Vinnie Wagstaff</div>
+                                                <div style="font-size: 12px; color: #8b9dc3;">UI Designer</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 80%;"></div>
+                                        </div>
+                                    </td>
+                                    <td>📊</td>
+                                    <td>⋯</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button style="background: #4CAF50; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">Show</button>
+                        <span style="margin-left: 20px; color: #8b9dc3;">View All</span>
+                        <button style="background: #4CAF50; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-left: 10px;">Add New Entry</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <aside class="right-sidebar">
+                <!-- Highlights -->
+                <div class="card">
+                    <div class="card-title">Highlights</div>
+                    <div class="highlights-section">
+                        <div class="highlight-item">
+                            <div class="highlight-avatar"></div>
+                            <div class="highlight-info">
+                                <div class="highlight-name">Rick Collier</div>
+                                <div class="highlight-role">Web</div>
+                            </div>
+                            <div class="highlight-value">750 ↗</div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-avatar"></div>
+                            <div class="highlight-info">
+                                <div class="highlight-name">Amanda Horne</div>
+                                <div class="highlight-role">Web</div>
+                            </div>
+                            <div class="highlight-value">642 ↗</div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-avatar"></div>
+                            <div class="highlight-info">
+                                <div class="highlight-name">John Motherfucker</div>
+                                <div class="highlight-role">SYSTEM</div>
+                            </div>
+                            <div class="highlight-value">674 ↗</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monthly Statistics -->
+                <div class="card">
+                    <div class="card-title">Monthly Statistics</div>
+                    <div class="stats-value">76</div>
+                    <div class="stats-description">Customers increased this Quarter</div>
+                    <div class="chart-placeholder">📈 Chart Visualization</div>
+                    <div class="chart-dots">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - Ticket System</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles/login.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="container">
+    <div class="login-card">
+      <h2>Sign Up</h2>
+
+      <form id="registerForm">
+        <!-- Username -->
+        <div class="input-group">
+          <label for="username">Username</label>
+          <div class="input-wrapper">
+            <i class="fas fa-user"></i>
+            <input type="text" id="username" name="username" placeholder="Choose a username" required />
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="input-group">
+          <label for="email">Email</label>
+          <div class="input-wrapper">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required />
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="input-group">
+          <label for="password">Password</label>
+          <div class="input-wrapper">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password" name="password" placeholder="Create a password" required />
+          </div>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="input-group">
+          <label for="confirm_password">Confirm Password</label>
+          <div class="input-wrapper">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required />
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="login-btn">SIGN UP</button>
+
+        <!-- Link to login -->
+        <div class="signup-link">
+          <span>Already have an account?</span>
+          <a href="login.html">LOGIN</a>
+        </div>
+      </form>
+
+      <!-- Message Area -->
+      <div id="message" class="message" style="display: none;"></div>
+    </div>
+  </div>
+
+  <!-- JavaScript for form handling -->
+  <script src="../backend/register.js"></script>
+</body>
+</html>

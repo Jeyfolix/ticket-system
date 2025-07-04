@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add User - Dashboard</title>
+  <link rel="stylesheet" href="../styles/add_user.css" />
+  <link rel="stylesheet" href="../styles/dashboard.css" />
+  <link rel="stylesheet" href="styles/form.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-left">
+      <div class="logo">Dashboard</div>
+      <nav class="nav-menu">
+        <a href="view-users.html" class="nav-item">Back to Users</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <div class="user-info">
+        <div class="avatar">KIBU</div>
+        <span>Kibabii University</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-title blue">User Management</div>
+        <div class="sidebar-item">
+          <span class="sidebar-icon"></span>
+          <a href="view-users.html">View Users</a>
+        </div>
+        <div class="sidebar-item active">
+          <span class="sidebar-icon"></span>
+          Add User
+        </div>
+        <div class="sidebar-item">
+          <span class="sidebar-icon"></span>
+          <a href="edit-users.html">Edit Users</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="main-content">
+        <div class="content-header">
+          <h1 class="page-title">Add New User</h1>
+          <div class="page-subtitle">Create a new user account for the dashboard</div>
+        </div>
+
+        <div class="form-container">
+          <div class="form-card">
+            <div class="form-header">
+              <h2>User Registration Form</h2>
+              <p>Fill in the details below to create a new user account</p>
+            </div>
+
+            <!-- Success/Error Messages -->
+            <div id="messageContainer" class="message-container" style="display: none;">
+              <div id="messageContent" class="message-content"></div>
+            </div>
+
+            <form id="addUserForm" class="user-form" novalidate>
+              <!-- User ID Display -->
+              <div class="form-row">
+                <div class="input-group full-width">
+                  <label for="userId" class="form-label">User ID</label>
+                  <div class="input-box readonly">
+                    <span class="input-icon"></span>
+                    <input type="text" id="userId" name="userId" readonly />
+                    <button type="button" id="generateIdBtn" class="generate-btn" title="Generate New ID">
+                      
+                    </button>
+                  </div>
+                  <small class="input-help">Auto-generated unique identifier</small>
+                </div>
+              </div>
+
+              <!-- Name and Email -->
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="name" class="form-label">Full Name *</label>
+                  <div class="input-box">
+                    <span class="input-icon"></span>
+                    <input 
+                      type="text" 
+                      id="name" 
+                      name="name" 
+                      placeholder="Enter full name" 
+                      required 
+                      minlength="2"
+                      maxlength="100"
+                    />
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="email" class="form-label">Email Address *</label>
+                  <div class="input-box">
+                    <span class="input-icon"></span>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      name="email" 
+                      placeholder="Enter email address" 
+                      required 
+                      maxlength="150"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Role and Phone -->
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="role" class="form-label">Role *</label>
+                  <div class="input-box">
+                    <span class="input-icon"></span>
+                    <select id="role" name="role" required>
+                      <option value="">Select Role</option>
+                      <option value="admin">Administrator</option>
+                      <option value="user">User</option>
+                      <option value="moderator">Moderator</option>
+                      <option value="guest">Guest</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <div class="input-box">
+                    <span class="input-icon"></span>
+                    <input 
+                      type="tel" 
+                      id="phone" 
+                      name="phone" 
+                      placeholder="Enter phone number" 
+                      maxlength="20"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Department and Status -->
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="department" class="form-label">Department</label>
+                  <div class="input-box">
+                    <span class="input-icon"></span>
+                    <select id="department" name="department">
+                      <option value="">Select Department</option>
+                      <option value="IT">Information Technology</option>
+                      <option value="HR">Human Resources</option>
+                      <option value="Finance">Finance</option>
+                      <option value="Marketing">Marketing</option>
+                      <option value="Sales">Sales</option>
+                      <option value="Operations">Operations</option>
+                      <option value="Customer Service">Customer Service</option>
+                      <option value="Development">Development</option>
+                      <option value="Design">Design</option>
+                      <option value="Management">Management</option>
+                      <option value="Quality Assurance">Quality Assurance</option>
+                      <option value="Research">Research</option>
+                      <option value="Support">Support</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="status" class="form-label">Initial Status</label>
+                  <div class="input-box">
+                    <span class="input-icon"></span>
+                    <select id="status" name="status">
+                      <option value="active">Active</option>
+                      <option value="inactive">Inactive</option>
+                      <option value="suspended">Suspended</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- System Information (Read-only) -->
+              <div class="form-section">
+                <h3 class="section-title">System Information</h3>
+                <div class="form-row">
+                  <div class="input-group">
+                    <label for="createdAt" class="form-label">Created At</label>
+                    <div class="input-box readonly">
+                      <span class="input-icon"></span>
+                      <input type="text" id="createdAt" name="createdAt" readonly />
+                    </div>
+                  </div>
+                  <div class="input-group">
+                    <label for="lastLogin" class="form-label">Last Login</label>
+                    <div class="input-box readonly">
+                      <span class="input-icon"></span>
+                      <input type="text" id="lastLogin" name="lastLogin" value="Never" readonly />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="input-group">
+                    <label for="loginCount" class="form-label">Login Count</label>
+                    <div class="input-box readonly">
+                      <span class="input-icon"></span>
+                      <input type="number" id="loginCount" name="loginCount" value="0" readonly />
+                    </div>
+                  </div>
+                  <div class="input-group">
+                    <!-- Empty space for layout balance -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Form Actions -->
+              <div class="form-actions">
+                <button type="button" id="cancelBtn" class="btn btn-secondary">
+                   Cancel
+                </button>
+                <button type="button" id="resetBtn" class="btn btn-outline">
+                   Reset Form
+                </button>
+                <button type="submit" id="submitBtn" class="btn btn-primary">
+                  <span class="btn-text">Add User</span>
+                  <span class="btn-loading" style="display: none;">
+                    <span class="spinner"></span> Adding...
+                  </span>
+                </button>
+              </div>
+            </form>
+
+            <!-- Form Preview (Hidden by default) -->
+            <div class="form-preview" id="formPreview" style="display: none;">
+              <h3>User Preview</h3>
+              <div class="preview-content" id="previewContent">
+                <!-- Preview will be populated here -->
+              </div>
+              <div class="preview-actions">
+                <button type="button" id="editPreviewBtn" class="btn btn-secondary">Edit</button>
+                <button type="button" id="confirmAddBtn" class="btn btn-primary">Confirm Add User</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Overlay -->
+  <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+    <div class="loading-content">
+      <div class="spinner-large"></div>
+      <p>Creating user account...</p>
+      <small>Please wait while we process your request...</small>
+    </div>
+  </div>
+
+  <!-- Confirmation Modal (Optional) -->
+  <div id="confirmationModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Confirm User Creation</h3>
+        <button type="button" class="modal-close" id="modalClose">×</button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to create this user account?</p>
+        <div id="confirmationDetails" class="confirmation-details">
+          <!-- User details will be populated here -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="modalCancel" class="btn btn-secondary">Cancel</button>
+        <button type="button" id="modalConfirm" class="btn btn-primary">Create User</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+   <script src="../backend/add_user.js"></script>
+  
+  <!-- Additional inline script for enhanced functionality -->
+  <script>
+    // Enhanced form functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Auto-focus first input
+      document.getElementById('name').focus();
+      
+      // Add keyboard shortcuts
+      document.addEventListener('keydown', function(e) {
+        // Ctrl/Cmd + S to submit form
+        if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+          e.preventDefault();
+          document.getElementById('addUserForm').dispatchEvent(new Event('submit'));
+        }
+        
+        // Escape to cancel
+        if (e.key === 'Escape') {
+          document.getElementById('cancelBtn').click();
+        }
+      });
+      
+      // Add tooltips for better UX
+      const tooltips = {
+        'userId': 'Unique identifier automatically generated for each user',
+        'name': 'Enter the user\'s full name (minimum 2 characters)',
+        'email': 'Valid email address required for account notifications',
+        'role': 'Select the appropriate role for system permissions',
+        'phone': 'Optional phone number for contact purposes',
+        'department': 'Select the user\'s department or leave blank',
+        'status': 'Initial account status (can be changed later)'
+      };
+      
+      Object.keys(tooltips).forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.title = tooltips[id];
+        }
+      });
+      
+      // Add character counter for name field
+      const nameField = document.getElementById('name');
+      const nameGroup = nameField.closest('.input-group');
+      const counter = document.createElement('small');
+      counter.className = 'char-counter';
+      counter.style.cssText = 'color: #6b7280; font-size: 11px; margin-top: 2px;';
+      nameGroup.appendChild(counter);
+      
+      nameField.addEventListener('input', function() {
+        const length = this.value.length;
+        counter.textContent = `${length}/100 characters`;
+        counter.style.color = length > 90 ? '#ef4444' : '#6b7280';
+      });
+      
+      // Email validation indicator
+      const emailField = document.getElementById('email');
+      const emailGroup = emailField.closest('.input-group');
+      const emailIndicator = document.createElement('div');
+      emailIndicator.className = 'email-indicator';
+      emailIndicator.style.cssText = 'position: absolute; right: 35px; top: 50%; transform: translateY(-50%); font-size: 12px;';
+      emailField.parentElement.style.position = 'relative';
+      emailField.parentElement.appendChild(emailIndicator);
+      
+      emailField.addEventListener('input', function() {
+        const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value);
+        if (this.value.length > 0) {
+          emailIndicator.textContent = isValid ? '✅' : '❌';
+          emailIndicator.title = isValid ? 'Valid email format' : 'Invalid email format';
+        } else {
+          emailIndicator.textContent = '';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
