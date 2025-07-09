@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Submit Ticket</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/submit_ticket.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+      <h2>Submit a Support Ticket</h2>
+      <form id="ticketForm" action="submit_ticket.php" method="POST" enctype="multipart/form-data" novalidate>
+        
+        <div class="input-box">
+          <label for="user_id">User ID <span style="color: red">*</span></label>
+          <input type="text" id="user_id" name="user_id" required placeholder="Enter your user ID" />
+          <p id="userIdError" class="error-message hidden">Please enter your user ID.</p>
+        </div>
+
+        <div class="input-box">
+          <label for="role">Role</label>
+          <select id="role" name="role">
+            <option value="Student" selected>Student</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Admin">Admin</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="input-box">
+          <label for="name">Full Name <span style="color: red">*</span></label>
+          <input type="text" id="name" name="name" required placeholder="John Doe" />
+          <p id="nameError" class="error-message hidden">Please enter your full name.</p>
+        </div>
+
+        <div class="input-box">
+          <label for="email">Email Address <span style="color: red">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="john@example.com" />
+          <p id="emailError" class="error-message hidden">Please enter a valid email address.</p>
+        </div>
+
+        <div class="input-box">
+          <label for="subject">Subject <span style="color: red">*</span></label>
+          <input type="text" id="subject" name="subject" required placeholder="Issue summary" />
+          <p id="subjectError" class="error-message hidden">Please enter a subject.</p>
+        </div>
+
+        <div class="input-box">
+          <label for="priority">Priority</label>
+          <select id="priority" name="priority">
+            <option value="Low">Low</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="High">High</option>
+            <option value="Urgent">Urgent</option>
+          </select>
+        </div>
+
+        <div class="input-box">
+          <label for="attachment">Attachment (optional)</label>
+          <input type="file" id="attachment" name="attachment" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx" />
+          <small style="color: #555;">Allowed: JPG, PNG, PDF, DOC (Max 5MB)</small>
+        </div>
+
+        <button type="submit" class="login-btn"><i class="fas fa-paper-plane"></i> Submit Ticket</button>
+        <div id="formMessage" class="hidden" style="margin-top: 15px;"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="../backend/submit_ticket.js"></script>
+</body>
+</html>

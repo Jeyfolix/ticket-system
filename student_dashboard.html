@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="../styles/dashboard.css" />
+  <script defer src="../backend/student_dashboard.js"></script>
+</head>
+<body>
+  <div class="header">
+    <div class="header-left">
+      <div class="logo">Student Portal</div>
+      <nav class="nav-menu">
+        <a href="#" class="nav-item" id="tab-view-tickets">My Tickets</a>
+        <a href="#" class="nav-item" id="tab-submit-ticket">Submit Ticket</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <div class="user-info">
+        <div class="avatar" id="userAvatar">S</div>
+        <span id="studentName">Loading...</span>
+      </div>
+      <a href="logout.php" class="nav-item">Logout</a>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-title blue">Navigation</div>
+        <div class="sidebar-item active" id="tab-view-tickets-sidebar">
+          <span class="sidebar-icon"></span> View Tickets
+        </div>
+        <div class="sidebar-item" id="tab-submit-ticket-sidebar">
+          <span class="sidebar-icon"></span> 
+      
+          Submit Ticket
+
+        </div>
+        <div class="sidebar-item logout">
+          <span class="sidebar-icon"></span> <a href="logout.php">Logout</a>
+        </div>
+      </div>
+    </aside>
+
+    <div class="content">
+      <main class="main-content">
+        <div class="content-header">
+          <h1 class="page-title">Welcome, <span id="studentID">...</span></h1>
+        </div>
+
+        <!-- My Tickets Section -->
+        <section id="view-tickets-section" class="dashboard-section">
+          <div class="card">
+            <div class="card-title">My Tickets</div>
+            <div id="ticket-list">Loading tickets...</div>
+          </div>
+        </section>
+
+        <!-- Submit Ticket Section with iframe -->
+        <section id="submit-ticket-section" class="dashboard-section" style="display: none;">
+          <div class="card">
+            <div class="card-title">Submit a Ticket</div>
+            <iframe
+              id="submitTicketFrame"
+              src=""
+              width="100%"
+              height="700px"
+              style="border: none; border-radius: 10px;"
+            ></iframe>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+</body>
+</html>
