@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Ticket Management</title>
+  <link rel="stylesheet" href="../styles/dashboard.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">🎓 Chuka University</div>
+      <nav class="nav-menu">
+        <a href="#">Dashboard</a>
+        <a href="#">Users</a>
+        <a href="#">Tickets</a>
+        <a href="#">Settings</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <div class="user-info">
+        <span>Admin Panel</span>
+        <div class="avatar">AD</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-item active">Overview</div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">User Management</div>
+        <div class="sidebar-item">View Users</div>
+        <div class="sidebar-item">Add / Edit Users</div>
+        <div class="sidebar-item">Account Verification</div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">Ticket Management</div>
+        <div class="sidebar-item">All Tickets</div>
+        <div class="sidebar-item">Assign Tickets</div>
+        <div class="sidebar-item">Ticket Categories</div>
+        <div class="sidebar-item">Ticket Status</div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <div class="main-content">
+        <div class="content-header">
+          <h1 class="page-title">Admin Ticket Management</h1>
+          <div class="student-search">
+            <input type="text" id="searchInput" placeholder="Search student by name or registration number">
+            <button>Search</button>
+          </div>
+        </div>
+
+        <!-- Ticket Creation Form -->
+        <section class="card ticket-form">
+          <h3>Student Ticket Details</h3>
+          <form id="ticketForm">
+            <label>Student Name</label>
+            <input type="text" id="student-name" readonly>
+
+            <label>Registration Number</label>
+            <input type="text" id="student-reg" readonly>
+
+            <label>Email Address</label>
+            <input type="email" id="student-email" readonly>
+
+            <label>Phone Number</label>
+            <input type="text" id="student-phone" readonly>
+             <label>Service / Category</label>
+              <input type="text" id="ticket-service" readonly>
+
+
+            <label>Title</label>
+            <input type="text" id="ticket-title" placeholder="Enter ticket title">
+
+            <label>Description</label>
+            <textarea id="ticket-description" placeholder="Describe the issue"></textarea>
+
+            <label>Attachment</label>
+            <input type="file" id="ticket-file">
+
+            <label>Priority</label>
+            <select id="ticket-priority">
+              <option>Low</option>
+              <option selected>Medium</option>
+              <option>High</option>
+            </select>
+
+            <button type="submit">Submit Ticket</button>
+          </form>
+        </section>
+
+        <!-- Ticket Stats -->
+        <section class="card">
+          <h3>Incoming Tickets</h3>
+          <p>No incoming tickets currently.</p>
+        </section>
+
+        <section class="card">
+          <h3>Tickets Solved This Month</h3>
+          <p>0 tickets solved.</p>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="../backend/admin_student_ticket.js"></script>
+</body>
+</html>

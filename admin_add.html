@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Admin</title>
+<link rel="stylesheet" href="../styles/admin_add.css">
+</head>
+<body>
+<div class="card">
+<h2>Create Admin</h2>
+<form id="adminForm">
+  <input type="text" id="username" placeholder="Username" required>
+  <input type="password" id="password" placeholder="Password" required minlength="8">
+  <input type="password" id="password_confirm" placeholder="Confirm Password" required minlength="8">
+  <button type="submit">Create Admin</button>
+</form>
+<div id="message"></div>
+</div>
+
+<script src="../backend/admin_add.js"></script>
+</body>
+</html>

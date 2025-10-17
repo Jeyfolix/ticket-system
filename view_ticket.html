@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Users - Dashboard</title>
+  <link rel="stylesheet" href="../styles/dashboard.css" />
+    <link rel="stylesheet" href="../styles/view_users.css" />
+    
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <div class="logo">Dashboard</div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item">Home</a>
+                <a href="#" class="nav-item">Analytics</a>
+                <a href="#" class="nav-item">Reports</a>
+                <a href="view-users.html" class="nav-item active">Users</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="user-info">
+                <div class="avatar">KIBU</div>
+                <span>Kibabii University</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title blue">User Management</div>
+                <div class="sidebar-item active">
+                    <span class="sidebar-icon"></span>
+                    View Users
+                </div>
+                <div class="sidebar-item">
+                    <span class="sidebar-icon"></span>
+                    Add User
+                </div>
+                <div class="sidebar-item">
+                    <span class="sidebar-icon"></span>
+                    Edit Users
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title blue">Ticket Management</div>
+                <div class="sidebar-item">
+                    <span class="sidebar-icon"></span>
+                    All Tickets
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title blue">Report and Analysis</div>
+                <div class="sidebar-item">
+                    <span class="sidebar-icon">📊</span>
+                    Analytics
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="main-content">
+                <div class="content-header">
+                    <h1 class="page-title">View Users</h1>
+                    <div class="page-subtitle">Manage and view all registered users</div>
+                </div>
+
+                <!-- Users Controls -->
+                <div class="users-controls">
+                    <div class="search-section">
+                        <div class="search-box">
+                            <input type="text" id="searchInput" placeholder="Search users by name, email, or role..." class="search-input">
+                            <button id="searchBtn" class="search-btn"></button>
+                        </div>
+                        <div class="filter-section">
+                            <select id="roleFilter" class="filter-select">
+                                <option value="">All Roles</option>
+                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
+                                <option value="moderator">Moderator</option>
+                                <option value="guest">Guest</option>
+                            </select>
+                            <select id="statusFilter" class="filter-select">
+                                <option value="">All Status</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                                <option value="suspended">Suspended</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button id="refreshBtn" class="btn btn-secondary"> Refresh</button>
+                        <button id="addUserBtn" class="btn btn-primary"> Add User</button>
+                        <button id="exportBtn" class="btn btn-outline">Export</button>
+                    </div>
+                </div>
+
+                <!-- Loading Indicator -->
+                <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+                    <div class="spinner"></div>
+                    <span>Loading users...</span>
+                </div>
+
+                <!-- Users Table -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            Users List
+                            <span id="userCount" class="user-count">0 users</span>
+                        </h3>
+                        <div class="view-options">
+                            <button id="tableViewBtn" class="view-btn active" data-view="table">Table</button>
+                            <button id="cardViewBtn" class="view-btn" data-view="card"> Cards</button>
+                        </div>
+                    </div>
+
+                    <!-- Table View -->
+                    <div id="tableView" class="table-view">
+                        <div class="table-container">
+                            <table id="usersTable" class="users-table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <input type="checkbox" id="selectAll" class="checkbox">
+                                        </th>
+                                        <th class="sortable" data-sort="name">
+                                            Name <span class="sort-icon"></span>
+                                        </th>
+                                        <th class="sortable" data-sort="email">
+                                            Email <span class="sort-icon"></span>
+                                        </th>
+                                        <th class="sortable" data-sort="role">
+                                            Role <span class="sort-icon"></span>
+                                        </th>
+                                        <th class="sortable" data-sort="status">
+                                            Status <span class="sort-icon"></span>
+                                        </th>
+                                        <th class="sortable" data-sort="created_at">
+                                            Joined <span class="sort-icon"></span>
+                                        </th>
+                                        <th class="sortable" data-sort="last_login">
+                                            Last Login <span class="sort-icon">↕️</span>
+                                        </th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="usersTableBody">
+                                    <!-- Users will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Card View -->
+                    <div id="cardView" class="card-view" style="display: none;">
+                        <div id="usersCardContainer" class="users-card-container">
+                            <!-- User cards will be populated here -->
+                        </div>
+                    </div>
+
+                    <!-- Empty State -->
+                    <div id="emptyState" class="empty-state" style="display: none;">
+                        <div class="empty-icon"></div>
+                        <h3>No Users Found</h3>
+                        <p>No users match your current search criteria.</p>
+                        <button id="clearFiltersBtn" class="btn btn-primary">Clear Filters</button>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination-container">
+                    <div class="pagination-info">
+                        Showing <span id="showingStart">0</span> to <span id="showingEnd">0</span> of <span id="totalUsers">0</span> users
+                    </div>
+                    <div class="pagination">
+                        <button id="prevPageBtn" class="pagination-btn" disabled>← Previous</button>
+                        <div id="pageNumbers" class="page-numbers"></div>
+                        <button id="nextPageBtn" class="pagination-btn" disabled>Next →</button>
+                    </div>
+                    <div class="page-size-selector">
+                        <label for="pageSize">Show:</label>
+                        <select id="pageSize" class="page-size-select">
+                            <option value="10">10</option>
+                            <option value="25" selected>25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        <span>per page</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Details Modal -->
+    <div id="userModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">User Details</h3>
+                <button id="closeModal" class="close-btn">×</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- User details will be populated here -->
+            </div>
+            <div class="modal-footer">
+                <button id="editUserBtn" class="btn btn-primary">Edit User</button>
+                <button id="deleteUserBtn" class="btn btn-danger">Delete User</button>
+                <button id="cancelModalBtn" class="btn btn-secondary">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="view-users.js"></script>
+</body>
+</html>

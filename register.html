@@ -1,72 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Register - Ticket System</title>
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="../styles/login.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <title>Register | Chuka University Portal</title>
+  <link rel="stylesheet" href="../styles/register.css">
 </head>
 <body>
   <div class="container">
-    <div class="login-card">
-      <h2>Sign Up</h2>
+    <header>
+      <h1>Chuka University Registration Portal</h1>
+    </header>
 
-      <form id="registerForm">
-        <!-- Username -->
-        <div class="input-group">
-          <label for="username">Username</label>
-          <div class="input-wrapper">
-            <i class="fas fa-user"></i>
-            <input type="text" id="username" name="username" placeholder="Choose a username" required />
-          </div>
-        </div>
+    <section class="description">
+      <p>
+        Welcome to <strong>Chuka University ICT Support System</strong>.  
+        This portal allows <strong>students</strong> and <strong>staff</strong> 
+        to register for access to the ticketing and support platform, where 
+        academic and technical issues can be reported and tracked efficiently.
+      </p>
+    </section>
 
-        <!-- Email -->
-        <div class="input-group">
-          <label for="email">Email</label>
-          <div class="input-wrapper">
-            <i class="fas fa-envelope"></i>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required />
-          </div>
-        </div>
+    <section class="register-options">
+      <div class="option-card student">
+        <h2>Student Registration</h2>
+        <p>Students can register to access academic records, course support, and ICT services.</p>
+        <button onclick="window.location.href='student_register.html'">Register as Student</button>
+      </div>
 
-        <!-- Password -->
-        <div class="input-group">
-          <label for="password">Password</label>
-          <div class="input-wrapper">
-            <i class="fas fa-lock"></i>
-            <input type="password" id="password" name="password" placeholder="Create a password" required />
-          </div>
-        </div>
+      <div class="option-card staff">
+        <h2>Staff Registration</h2>
+        <p>Staff can register to manage student issues, report system problems, and access university IT tools.</p>
+        <button onclick="window.location.href='staff_register.html'">Register as Staff</button>
+      </div>
+    </section>
 
-        <!-- Confirm Password -->
-        <div class="input-group">
-          <label for="confirm_password">Confirm Password</label>
-          <div class="input-wrapper">
-            <i class="fas fa-lock"></i>
-            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required />
-          </div>
-        </div>
-
-        <!-- Submit Button -->
-        <button type="submit" class="login-btn">SIGN UP</button>
-
-        <!-- Link to login -->
-        <div class="signup-link">
-          <span>Already have an account?</span>
-          <a href="login.html">LOGIN</a>
-        </div>
-      </form>
-
-      <!-- Message Area -->
-      <div id="message" class="message" style="display: none;"></div>
-    </div>
+    <footer>
+      <p>© 2025 Chuka University ICT Department | All Rights Reserved</p>
+    </footer>
   </div>
-
-  <!-- JavaScript for form handling -->
-  <script src="../backend/register.js"></script>
 </body>
 </html>

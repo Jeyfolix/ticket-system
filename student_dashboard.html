@@ -4,76 +4,118 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Student Dashboard</title>
-  <link rel="stylesheet" href="../styles/dashboard.css" />
-  <script defer src="../backend/student_dashboard.js"></script>
+    <link rel="stylesheet" href="../styles/student_dash.css">
 </head>
 <body>
-  <div class="header">
+  <!-- Header -->
+  <header class="header">
     <div class="header-left">
       <div class="logo">Student Portal</div>
-      <nav class="nav-menu">
-        <a href="#" class="nav-item" id="tab-view-tickets">My Tickets</a>
-        <a href="#" class="nav-item" id="tab-submit-ticket">Submit Ticket</a>
-      </nav>
     </div>
     <div class="header-right">
       <div class="user-info">
-        <div class="avatar" id="userAvatar">S</div>
-        <span id="studentName">Loading...</span>
+        <div class="avatar">CU</div>
+        <span id="studentName"></span>
       </div>
       <a href="logout.php" class="nav-item">Logout</a>
     </div>
-  </div>
+  </header>
 
   <div class="main-container">
+    <!-- Sidebar -->
     <aside class="sidebar">
       <div class="sidebar-section">
-        <div class="sidebar-title blue">Navigation</div>
-        <div class="sidebar-item active" id="tab-view-tickets-sidebar">
-          <span class="sidebar-icon"></span> View Tickets
-        </div>
-        <div class="sidebar-item" id="tab-submit-ticket-sidebar">
-          <span class="sidebar-icon"></span> 
-      
-          Submit Ticket
-
-        </div>
-        <div class="sidebar-item logout">
-          <span class="sidebar-icon"></span> <a href="logout.php">Logout</a>
-        </div>
+        <div class="sidebar-title">Navigation</div>
+        <div class="sidebar-item active">Dashboard</div>
+        <div class="sidebar-item">Open Tickets</div>
+        <div class="sidebar-item">Request History</div>
+        <div class="sidebar-item">Ticket Details</div>
+        <div class="sidebar-item">Self-Help</div>
+        <div class="sidebar-item">Notifications</div>
+        <div class="sidebar-item">Quick Actions</div>
       </div>
     </aside>
 
-    <div class="content">
-      <main class="main-content">
-        <div class="content-header">
-          <h1 class="page-title">Welcome, <span id="studentID">...</span></h1>
-        </div>
+    <!-- Main Content -->
+    <main class="content">
+      <section class="card welcome-card">
+        <h2>WHATS UP NOW <span id="studentWelcomeName"></span></h2>
+      </section>
 
-        <!-- My Tickets Section -->
-        <section id="view-tickets-section" class="dashboard-section">
-          <div class="card">
-            <div class="card-title">My Tickets</div>
-            <div id="ticket-list">Loading tickets...</div>
-          </div>
-        </section>
+    <!-- Ticket Creation Panel -->
+<section class="card ticket-form">
+  <h3>Submit Your Issue</h3>
+  <form id="ticketForm" method="POST" action="../backend/ticket.php" enctype="multipart/form-data">
 
-        <!-- Submit Ticket Section with iframe -->
-        <section id="submit-ticket-section" class="dashboard-section" style="display: none;">
-          <div class="card">
-            <div class="card-title">Submit a Ticket</div>
-            <iframe
-              id="submitTicketFrame"
-              src=""
-              width="100%"
-              height="700px"
-              style="border: none; border-radius: 10px;"
-            ></iframe>
-          </div>
-        </section>
+    <!--  Student Details -->
+    <label>Full Name</label>
+    <input type="text" name="fullname" placeholder="Enter your full name" required />
 
-      </main>
-    </div>
+    <label>Registration Number</label>
+    <input type="text" name="regno" placeholder="Enter registration number" required />
+
+    <label>Email Address</label>
+    <input type="email" name="email" placeholder="Enter your email address" required />
+
+    <label>Phone Number</label>
+    <input type="tel" name="phone" placeholder="Enter your phone number" required />
+
+    <!-- Ticket Information -->
+    <label>Category / Service</label>
+    <select name="category" required>
+      <option value="">--Select--</option>
+      <option>password reset</option>
+      <option>LMS</option>
+      <option>course registration</option>
+      <option>missing marks</option>
+      <option>Transcript</option>
+      <option>Access to learning material</option>
+      <option>Gate Pass Picking</option>
+      <option>Fee Statement request</option>
+      <option>Scholarship</option>
+      <option>Administration</option>
+      <option>Accommodation</option>
+    </select>
+
+    <label>Title</label>
+    <input type="text" name="title" placeholder="Enter ticket title" required />
+
+    <label>Description</label>
+    <textarea name="description" placeholder="Describe your issue" required></textarea>
+
+    <label>Attachment</label>
+    <input type="file" name="attachment" />
+
+    <label>Priority</label>
+    <select name="priority">
+      <option>Low</option>
+      <option selected>Medium</option>
+      <option>High</option>
+    </select>
+
+    <button type="submit">Submit Ticket</button>
+  </form>
+</section>
+
+
+
+     
+      <!-- Notifications -->
+      <section class="card">
+        <h3>Notification Settings</h3>
+        <label><input type="checkbox"> Email Alerts</label>
+        <label><input type="checkbox"> SMS Alerts</label>
+      </section>
+
+      <!-- Quick Actions -->
+      <section class="card quick-actions">
+        <h3>Quick Actions</h3>
+        <button>Open New Ticket</button>
+        <button>View Pending Tickets</button>
+        <button>View Resolved Tickets</button>
+      </section>
+    </main>
   </div>
+  <script src="../backend/ticket.js"></script>
 </body>
 </html>
