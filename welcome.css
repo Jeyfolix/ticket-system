@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f2f6fa;
+  color: #333;
+}
+
+header {
+  background: #004b23;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.welcome {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.welcome h2 {
+  color: #004b23;
+}
+
+.welcome p {
+  max-width: 600px;
+  margin: 10px auto 30px;
+  line-height: 1.6;
+}
+
+.auth-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.auth-buttons button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.auth-buttons button:hover {
+  background: #0056b3;
+}
+
+footer {
+  text-align: center;
+  background: #004b23;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
